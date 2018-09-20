@@ -38,6 +38,31 @@ namespace Someren
             return c;
         }
 
+        public static Control showTeachers()
+        {
+            List<SomerenModel.Docent> dl = new List<SomerenModel.Docent>();
+            //SomerenDB.
+
+            //SomerenDB.DB_getteachers();
+
+            int aantal = dl.Count();
+            ListView c = new ListView();
+            c.Height = 1000;
+            ListViewItem li = new ListViewItem();
+
+            //SomerenModel.Docent d1 = new SomerenModel.Docent();
+
+            foreach (SomerenModel.Docent d in dl)
+            {
+                li.SubItems.Add(d.getNaam());
+                li.SubItems.Add(d.getId().ToString());
+                c.Items.Add(d.getNaam());
+                c.Items.Add(li);
+            }
+
+            return c;
+        }
+
         public static Control addUILabel(string text)
         {
             Label l = new Label();

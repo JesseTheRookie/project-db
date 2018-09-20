@@ -116,7 +116,16 @@ namespace Someren
             return docenten_lijst;
         }
 
+        public void AddTeacherToMethodList()
+        {
+            List<SomerenModel.Docent> docenten = DB_getteachers();
 
-        // public void 
+            foreach(SomerenModel.Docent docent in docenten)
+            {
+                SomerenModel.DocentList list = new SomerenModel.DocentList();
+                list.addList(docent);
+            }
+            
+        }
     }
 }
