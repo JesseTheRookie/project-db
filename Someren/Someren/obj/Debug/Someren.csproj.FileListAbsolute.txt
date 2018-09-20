@@ -7,3 +7,13 @@ c:\users\thijs otter\documents\visual studio 2015\Projects\Someren\Someren\bin\D
 c:\users\thijs otter\documents\visual studio 2015\Projects\Someren\Someren\obj\Debug\Someren.exe
 c:\users\thijs otter\documents\visual studio 2015\Projects\Someren\Someren\obj\Debug\Someren.pdb
 c:\users\thijs otter\documents\visual studio 2015\Projects\Someren\Someren\obj\Debug\Someren.Someren_Form.resources
+C:\Users\jesse\Documents\GitHub\project-db\Someren\Someren\bin\Debug\Someren.exe.config
+C:\Users\jesse\Documents\GitHub\project-db\Someren\Someren\bin\Debug\Someren.exe
+C:\Users\jesse\Documents\GitHub\project-db\Someren\Someren\bin\Debug\Someren.pdb
+C:\Users\jesse\Documents\GitHub\project-db\Someren\Someren\obj\Debug\Someren.csprojAssemblyReference.cache
+C:\Users\jesse\Documents\GitHub\project-db\Someren\Someren\obj\Debug\Someren.Someren_Form.resources
+C:\Users\jesse\Documents\GitHub\project-db\Someren\Someren\obj\Debug\Someren.Properties.Resources.resources
+C:\Users\jesse\Documents\GitHub\project-db\Someren\Someren\obj\Debug\Someren.csproj.GenerateResource.cache
+C:\Users\jesse\Documents\GitHub\project-db\Someren\Someren\obj\Debug\Someren.csproj.CoreCompileInputs.cache
+C:\Users\jesse\Documents\GitHub\project-db\Someren\Someren\obj\Debug\Someren.exe
+C:\Users\jesse\Documents\GitHub\project-db\Someren\Someren\obj\Debug\Someren.pdb

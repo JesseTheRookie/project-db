@@ -11,10 +11,10 @@ namespace Someren
     {  
         private SqlConnection openConnectieDB()
         {
-            string host = "spartainholland.database.windows.net";
-            string db = "someren_inholland_db";
-            string user = "spartainholland";
-            string password = "Sparta1";
+            string host = "den1.mssql3.gear.host";
+            string db = "pdb1819f3";
+            string user = "pdb1819f3";
+            string password = "Ab2Ls9g2X?_3";
             //string port = "3306";
 
             try
@@ -39,12 +39,13 @@ namespace Someren
             }            
         }
 
+
         private void sluitConnectieDB(SqlConnection connection)
         {
             connection.Close();
         }
 
-        public List<SomerenModel.Student> DB_gettudents()
+        public List<SomerenModel.Student> DB_getstudents()
         {
             SqlConnection connection = openConnectieDB();
             List<SomerenModel.Student> studenten_lijst = new List<SomerenModel.Student>();
@@ -74,6 +75,38 @@ namespace Someren
             return studenten_lijst;
         }
 
-       // public void 
+
+        public List<SomerenModel.Docent> DB_getteachers()
+        {
+            SqlConnection connection = openConnectieDB();
+            List<SomerenModel.Docent> docenten_lijst = new List<SomerenModel.Docent>();
+
+            connection.Open();
+            StringBuilder sb = new StringBuilder();
+            // schrijf hier een query om te zorgen dat er een lijst met studenten wordt getoond
+            sb.Append("#query");
+
+            /* VOORBEELDQUERY */
+            //sb.Append("SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName ");
+            //sb.Append("FROM [SalesLT].[ProductCategory] pc ");
+            //sb.Append("JOIN [SalesLT].[Product] p ");
+            //sb.Append("ON pc.productcategoryid = p.productcategoryid;");
+            /* */
+
+            String sql = sb.ToString();
+
+            SqlCommand command = new SqlCommand(sql, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                SomerenModel.Docent docent = new SomerenModel.Docent();
+                docenten_lijst.Add(docent);
+            }
+
+            return docenten_lijst;
+        }
+
+
+        // public void 
     }
 }
