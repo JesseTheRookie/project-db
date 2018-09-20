@@ -84,7 +84,7 @@ namespace Someren
             connection.Open();
             StringBuilder sb = new StringBuilder();
             // schrijf hier een query om te zorgen dat er een lijst met studenten wordt getoond
-            sb.Append("#query");
+            sb.Append("SELECT docent_id, docent_naam, docent_achternaam FROM docenten");
 
             /* VOORBEELDQUERY */
             //sb.Append("SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName ");
@@ -97,9 +97,19 @@ namespace Someren
 
             SqlCommand command = new SqlCommand(sql, connection);
             SqlDataReader reader = command.ExecuteReader();
+
             while (reader.Read())
             {
+                int id = (int)reader["docenten_id"];
+                string naam = (string)reader["docent_naam"];
+                string achternaam = (string)reader["docent_achternaam"];
+
                 SomerenModel.Docent docent = new SomerenModel.Docent();
+
+                docent.setId(id);
+                docent.setNaam(naam);
+                docent.setAchterNaam(achternaam);
+
                 docenten_lijst.Add(docent);
             }
 

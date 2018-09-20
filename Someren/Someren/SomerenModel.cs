@@ -46,22 +46,34 @@ namespace Someren
         }
 
         //Begin docent classes
-
         public class Docent
         {
             int id;
             string naam;
+            string achterNaam;
 
             public void setNaam(string naamDocent)
             {
                 naam = naamDocent;
             }
-
             public string getNaam()
             {
                 return naam;
             }
 
+            public void setAchterNaam(string AchterNaamDocent)
+            {
+                achterNaam = AchterNaamDocent;
+            }
+            public string getAchterNaam()
+            {
+                return naam;
+            }
+
+            public void setId(int idDocent)
+            {
+                id = idDocent;
+            }
             public int getId()
             {
                 return id;
@@ -71,16 +83,16 @@ namespace Someren
 
         public class DocentList
         {
-            List<SomerenModel.Docent> sl = new List<SomerenModel.Docent>();
+            List<SomerenModel.Docent> dl = new List<SomerenModel.Docent>();
 
-            public void addList(SomerenModel.Docent s)
+            public void addList(SomerenModel.Docent d)
             {
-                sl.Add(s);
+                dl.Add(d);
             }
 
             public List<SomerenModel.Docent> getList()
             {
-                return sl;
+                return dl;
             }
         }
 
