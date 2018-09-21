@@ -13,27 +13,29 @@ namespace Someren
         {
             List<SomerenModel.Student> sl = new List<SomerenModel.Student>();
             //SomerenDB.
-            SomerenModel.Student s1 = new SomerenModel.Student();
-            s1.setNaam("Henk");
-            SomerenModel.Student s2 = new SomerenModel.Student();
-            s2.setNaam("Piet");
-            SomerenModel.Student s3 = new SomerenModel.Student();
-            s3.setNaam("Amber");
 
-            sl.Add(s1);
-            sl.Add(s2);
-            sl.Add(s3);
+            SomerenDB db = new SomerenDB();
+            sl = db.DB_getstudents();
+            SomerenModel.Student[] studenten = sl.ToArray();
 
-            int aantal = sl.Count();
             ListView c = new ListView();
-            c.Height = 1000;
-            ListViewItem li = new ListViewItem();
-            li.SubItems.Add(s1.getNaam());
-            li.SubItems.Add(s1.getId().ToString());
-            c.Items.Add(s1.getNaam());
-            c.Items.Add(s2.getNaam());
-            c.Items.Add(s3.getNaam());
-            c.Items.Add(li);
+            c.View = View.Details;
+            c.BackColor = System.Drawing.SystemColors.ControlLight;
+
+            c.Columns.Add("id", -2, HorizontalAlignment.Left);
+            c.Columns.Add("naam", -2, HorizontalAlignment.Left);
+            c.Columns.Add("achternaam", -2, HorizontalAlignment.Left);
+
+            c.Height = 500;
+            c.Width = 500;
+
+            for (int i = 0; i < studenten.Length; i++)
+            {
+                ListViewItem lv = new ListViewItem(studenten[i].getId().ToString());
+                lv.SubItems.Add(studenten[i].getNaam());
+                lv.SubItems.Add(studenten[i].getAchternaam());
+                c.Items.Add(lv);
+            }
 
             return c;
         }
@@ -43,21 +45,28 @@ namespace Someren
             List<SomerenModel.Docent> dl = new List<SomerenModel.Docent>();
             //SomerenDB.
 
-            //SomerenDB.DB_getteachers();
 
-            int aantal = dl.Count();
+            SomerenDB db = new SomerenDB();
+            dl = db.DB_getteachers();
+            SomerenModel.Docent[] docenten = dl.ToArray();
+
             ListView c = new ListView();
-            c.Height = 1000;
-            ListViewItem li = new ListViewItem();
+            c.View = View.Details;
+            c.BackColor = System.Drawing.SystemColors.ControlLight;
 
-            //SomerenModel.Docent d1 = new SomerenModel.Docent();
+            c.Columns.Add("docent_id", -2, HorizontalAlignment.Left);
+            c.Columns.Add("docent_naam", -2, HorizontalAlignment.Left);
+            c.Columns.Add("docent_achternaam", -2, HorizontalAlignment.Left);
 
-            foreach (SomerenModel.Docent d in dl)
+            c.Height = 500;
+            c.Width = 500;
+
+            for (int i = 0; i < docenten.Length; i++)
             {
-                li.SubItems.Add(d.getNaam());
-                li.SubItems.Add(d.getId().ToString());
-                c.Items.Add(d.getNaam());
-                c.Items.Add(li);
+                ListViewItem lv = new ListViewItem(docenten[i].getId().ToString());
+                lv.SubItems.Add(docenten[i].getNaam());
+                lv.SubItems.Add(docenten[i].getAchternaam());
+                c.Items.Add(lv);
             }
 
             return c;

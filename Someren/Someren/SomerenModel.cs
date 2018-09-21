@@ -8,15 +8,25 @@ namespace Someren
 {
     class SomerenModel
     {
-    //Begin student classes
+
+ // Begin student classes
         public class Student
         {
             int id;
             string naam;
+            string achternaam;
 
+            public void setId(int IdStudent)
+            {
+                id = IdStudent;
+            }
             public void setNaam(string naamStudent)
             {
                 naam = naamStudent;
+            }
+            public void setAchternaam(string AchternaamStudent)
+            {
+                achternaam = AchternaamStudent;
             }
 
             public string getNaam()
@@ -28,7 +38,12 @@ namespace Someren
             {
                 return id;
             }
-            
+
+            public string getAchternaam()
+            {
+                return achternaam;
+            }
+
         }
 
         public class StudentList
@@ -45,7 +60,7 @@ namespace Someren
             }
         }
 
-        //Begin docent classes
+ // Begin docent classes
         public class Docent
         {
             int id;
@@ -61,11 +76,11 @@ namespace Someren
                 return naam;
             }
 
-            public void setAchterNaam(string AchterNaamDocent)
+            public void setAchternaam(string AchternaamDocent)
             {
-                achterNaam = AchterNaamDocent;
+                achterNaam = AchternaamDocent;
             }
-            public string getAchterNaam()
+            public string getAchternaam()
             {
                 return naam;
             }

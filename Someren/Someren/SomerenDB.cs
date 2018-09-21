@@ -81,17 +81,11 @@ namespace Someren
             SqlConnection connection = openConnectieDB();
             List<SomerenModel.Docent> docenten_lijst = new List<SomerenModel.Docent>();
 
-            connection.Open();
+            //connection.Open();
             StringBuilder sb = new StringBuilder();
-            // schrijf hier een query om te zorgen dat er een lijst met studenten wordt getoond
+ // SELECT Query voor docenten
             sb.Append("SELECT docent_id, docent_naam, docent_achternaam FROM docenten");
 
-            /* VOORBEELDQUERY */
-            //sb.Append("SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName ");
-            //sb.Append("FROM [SalesLT].[ProductCategory] pc ");
-            //sb.Append("JOIN [SalesLT].[Product] p ");
-            //sb.Append("ON pc.productcategoryid = p.productcategoryid;");
-            /* */
 
             String sql = sb.ToString();
 
@@ -100,7 +94,7 @@ namespace Someren
 
             while (reader.Read())
             {
-                int id = (int)reader["docenten_id"];
+                int id = (int)reader["docent_id"];
                 string naam = (string)reader["docent_naam"];
                 string achternaam = (string)reader["docent_achternaam"];
 
@@ -108,24 +102,12 @@ namespace Someren
 
                 docent.setId(id);
                 docent.setNaam(naam);
-                docent.setAchterNaam(achternaam);
+                docent.setAchternaam(achternaam);
 
                 docenten_lijst.Add(docent);
             }
-
+            sluitConnectieDB(connection);
             return docenten_lijst;
-        }
-
-        public void AddTeacherToMethodList()
-        {
-            List<SomerenModel.Docent> docenten = DB_getteachers();
-
-            foreach(SomerenModel.Docent docent in docenten)
-            {
-                SomerenModel.DocentList list = new SomerenModel.DocentList();
-                list.addList(docent);
-            }
-            
         }
     }
 }
