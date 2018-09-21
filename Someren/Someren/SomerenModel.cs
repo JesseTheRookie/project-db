@@ -82,7 +82,7 @@ namespace Someren
             }
             public string getAchternaam()
             {
-                return naam;
+                return achterNaam;
             }
 
             public void setId(int idDocent)

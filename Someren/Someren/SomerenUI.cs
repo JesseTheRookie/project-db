@@ -45,7 +45,6 @@ namespace Someren
             List<SomerenModel.Docent> dl = new List<SomerenModel.Docent>();
             //SomerenDB.
 
-
             SomerenDB db = new SomerenDB();
             dl = db.DB_getteachers();
             SomerenModel.Docent[] docenten = dl.ToArray();
@@ -54,9 +53,9 @@ namespace Someren
             c.View = View.Details;
             c.BackColor = System.Drawing.SystemColors.ControlLight;
 
-            c.Columns.Add("docent_id", -2, HorizontalAlignment.Left);
-            c.Columns.Add("docent_naam", -2, HorizontalAlignment.Left);
-            c.Columns.Add("docent_achternaam", -2, HorizontalAlignment.Left);
+            c.Columns.Add("ID", -2, HorizontalAlignment.Left);
+            c.Columns.Add("Naam", -2, HorizontalAlignment.Left);
+            c.Columns.Add("Achternaam", -2, HorizontalAlignment.Left);
 
             c.Height = 500;
             c.Width = 500;
