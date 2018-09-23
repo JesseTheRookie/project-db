@@ -37,3 +37,13 @@ C:\Users\jesse\OneDrive - Hogeschool Inholland\temp\x\Someren\obj\Debug\Someren.
 C:\Users\jesse\OneDrive - Hogeschool Inholland\temp\x\Someren\obj\Debug\Someren.csproj.CoreCompileInputs.cache
 C:\Users\jesse\OneDrive - Hogeschool Inholland\temp\x\Someren\obj\Debug\Someren.exe
 C:\Users\jesse\OneDrive - Hogeschool Inholland\temp\x\Someren\obj\Debug\Someren.pdb
+C:\Users\jesse\Documents\GitHub\project-db\Someren\bin\Debug\Someren.exe.config
+C:\Users\jesse\Documents\GitHub\project-db\Someren\bin\Debug\Someren.exe
+C:\Users\jesse\Documents\GitHub\project-db\Someren\bin\Debug\Someren.pdb
+C:\Users\jesse\Documents\GitHub\project-db\Someren\obj\Debug\Someren.csprojAssemblyReference.cache
+C:\Users\jesse\Documents\GitHub\project-db\Someren\obj\Debug\Someren.Someren_Form.resources
+C:\Users\jesse\Documents\GitHub\project-db\Someren\obj\Debug\Someren.Properties.Resources.resources
+C:\Users\jesse\Documents\GitHub\project-db\Someren\obj\Debug\Someren.csproj.GenerateResource.cache
+C:\Users\jesse\Documents\GitHub\project-db\Someren\obj\Debug\Someren.csproj.CoreCompileInputs.cache
+C:\Users\jesse\Documents\GitHub\project-db\Someren\obj\Debug\Someren.exe
+C:\Users\jesse\Documents\GitHub\project-db\Someren\obj\Debug\Someren.pdb
