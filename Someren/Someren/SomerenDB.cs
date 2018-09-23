@@ -50,17 +50,10 @@ namespace Someren
             SqlConnection connection = openConnectieDB();
             List<SomerenModel.Student> studenten_lijst = new List<SomerenModel.Student>();
 
-            connection.Open();
+            //connection.Open();
             StringBuilder sb = new StringBuilder();
             // schrijf hier een query om te zorgen dat er een lijst met studenten wordt getoond
-            sb.Append("#query");
-
-            /* VOORBEELDQUERY */
-            //sb.Append("SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName ");
-            //sb.Append("FROM [SalesLT].[ProductCategory] pc ");
-            //sb.Append("JOIN [SalesLT].[Product] p ");
-            //sb.Append("ON pc.productcategoryid = p.productcategoryid;");
-            /* */
+            sb.Append("SELECT student_id,student_voornaam,student_achternaam FROM studenten");
 
             String sql = sb.ToString();
 
@@ -68,10 +61,20 @@ namespace Someren
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
+                int id = (int)reader["student_id"];
+                string naam = (string)reader["student_voornaam"];
+                string achternaam = (string)reader["student_achternaam"];
+
                 SomerenModel.Student student = new SomerenModel.Student();
+
+                student.setId(id);
+                student.setNaam(naam);
+                student.setAchterNaam(achternaam);
+
+
                 studenten_lijst.Add(student);
             }
-
+            sluitConnectieDB(connection);
             return studenten_lijst;
         }
 

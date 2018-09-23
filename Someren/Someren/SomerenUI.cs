@@ -11,23 +11,25 @@ namespace Someren
     {
         public static Control showStudents()
         {
+
             List<SomerenModel.Student> sl = new List<SomerenModel.Student>();
             //SomerenDB.
 
             SomerenDB db = new SomerenDB();
             sl = db.DB_getstudents();
+
             SomerenModel.Student[] studenten = sl.ToArray();
 
             ListView c = new ListView();
             c.View = View.Details;
             c.BackColor = System.Drawing.SystemColors.ControlLight;
 
-            c.Columns.Add("id", -2, HorizontalAlignment.Left);
-            c.Columns.Add("naam", -2, HorizontalAlignment.Left);
-            c.Columns.Add("achternaam", -2, HorizontalAlignment.Left);
+            c.Columns.Add("Student ID    ", -2, HorizontalAlignment.Left);
+            c.Columns.Add("Voornaam    ", -2, HorizontalAlignment.Left);
+            c.Columns.Add("Achternaam    ", -2, HorizontalAlignment.Left);
 
-            c.Height = 500;
-            c.Width = 500;
+            c.Height = 1000;
+            c.Width = 1000;
 
             for (int i = 0; i < studenten.Length; i++)
             {
