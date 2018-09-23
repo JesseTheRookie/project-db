@@ -73,6 +73,37 @@ namespace Someren
             return c;
         }
 
+        public static Control showKamers()
+        {
+            List<SomerenModel.Kamers> sl = new List<SomerenModel.Kamers>();
+            //SomerenDB.
+
+            SomerenDB db = new SomerenDB();
+            sl = db.DB_getKamers();
+            SomerenModel.Kamers[] kamers = sl.ToArray();
+
+            ListView c = new ListView();
+            c.View = View.Details;
+            c.BackColor = System.Drawing.SystemColors.ControlLight;
+
+            c.Columns.Add("Kamer nummer", -2, HorizontalAlignment.Left);
+            c.Columns.Add("Aantal bedden", -2, HorizontalAlignment.Left);
+            c.Columns.Add("Docenten kamer", -2, HorizontalAlignment.Left);
+
+            c.Height = 500;
+            c.Width = 500;
+
+            for (int i = 0; i < kamers.Length; i++)
+            {
+                ListViewItem lv = new ListViewItem(kamers[i].getKamerNr().ToString());
+                lv.SubItems.Add(kamers[i].getAantalBedden().ToString());
+                lv.SubItems.Add(kamers[i].getKamerDocent());
+                c.Items.Add(lv);
+            }
+
+            return c;
+        }
+
         public static Control addUILabel(string text)
         {
             Label l = new Label();

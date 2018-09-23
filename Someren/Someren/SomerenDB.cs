@@ -112,5 +112,38 @@ namespace Someren
             sluitConnectieDB(connection);
             return docenten_lijst;
         }
+
+        public List<SomerenModel.Kamers> DB_getKamers()
+        {
+            SqlConnection connection = openConnectieDB();
+            List<SomerenModel.Kamers> kamers_lijst = new List<SomerenModel.Kamers>();
+
+            //connection.Open();
+            StringBuilder sb = new StringBuilder();
+            // schrijf hier een query om te zorgen dat er een lijst met studenten wordt getoond
+            sb.Append("SELECT kamer_nummer, kamer_Bedden, kamer_DocentJN FROM kamers");
+
+            String sql = sb.ToString();
+
+            SqlCommand command = new SqlCommand(sql, connection);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                int kamerNr = (int)reader["kamer_nummer"];
+                int aantalBedden = (int)reader["kamer_Bedden"];
+                string kamerDocent = (string)reader["kamer_DocentJN"];
+
+                SomerenModel.Kamers kamer = new SomerenModel.Kamers();
+
+                kamer.setKamerNummer(kamerNr);
+                kamer.setKamerBedden(aantalBedden);
+                kamer.setKamerDocent(kamerDocent);
+
+
+                kamers_lijst.Add(kamer);
+            }
+            sluitConnectieDB(connection);
+            return kamers_lijst;
+        }
     }
 }

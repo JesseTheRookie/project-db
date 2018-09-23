@@ -113,7 +113,60 @@ namespace Someren
                     return dl;
                 }
             }
+            
+            //Begin kamer classes
+            public class Kamers
+            {
+                int kamerNr;
+                int kamerBedden;
+                string kamerDocent;
 
-        }
-    }
+
+                public void setKamerNummer(int kamerNummer)
+                {
+                    kamerNr = kamerNummer;
+                }
+                public void setKamerBedden(int aantalBedden)
+                {
+                    kamerBedden = aantalBedden;
+                }
+                public void setKamerDocent(string kamerDocentJN)
+                {
+                    kamerDocent = kamerDocentJN;
+                }
+
+                public int getKamerNr()
+                {
+                    return kamerNr;
+                }
+
+                public int getAantalBedden()
+                {
+                    return kamerBedden;
+                }
+
+                public string getKamerDocent()
+                {
+                    return kamerDocent;
+                }
+
+            }
+
+            public class KamerList
+            {
+                List<SomerenModel.Kamers> sl = new List<SomerenModel.Kamers>();
+
+                public void addList(SomerenModel.Kamers s)
+                {
+                    sl.Add(s);
+                }
+
+                public List<SomerenModel.Kamers> getList()
+                {
+                    return sl;
+                }
+            }
+
+         }
+      }
 
